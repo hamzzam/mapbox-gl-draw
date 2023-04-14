@@ -224,9 +224,9 @@ export default function(ctx) {
       ctx.map.on('mouseup', events.mouseup);
       ctx.map.on('data', events.data);
 
-      ctx.map.on('touchmove', events.touchmove);
-      ctx.map.on('touchstart', events.touchstart);
-      ctx.map.on('touchend', events.touchend);
+      ctx.map.on('touchmove', events.touchmove, {passive: false});
+      ctx.map.on('touchstart', events.touchstart, {passive: false});
+      ctx.map.on('touchend', events.touchend, {passive: false});
 
       ctx.container.addEventListener('mouseout', events.mouseout);
 
